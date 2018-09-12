@@ -13,7 +13,7 @@
     if ((expression)) {               \
       return value;                   \
     }                                 \
-  } while (false);
+  } while (false)
 
 #define _ARG2(_0, _1, _2, ...) _2
 #define NARG2(...) _ARG2(__VA_ARGS__, 2, 1, 0)
