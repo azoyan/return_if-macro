@@ -54,9 +54,10 @@ std::string bar(bool cond) {
 }
 
 bool baz(int n) {
-  RETURN_FALSE_IF(n < 2 || n * n > 25);
+  RETURN_FALSE_IF(n < 2);
+  return_false_if(n * n > 25);
   //
-  //lot of code
+  // lot of code
   //
   return true;
 }
