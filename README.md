@@ -1,4 +1,5 @@
 # return_if macro
+### Macro
 ```C++
 #if !defined(return_if) || !defined(RETURN_IF)
 #define return_if1(expression) \
@@ -33,4 +34,38 @@
 #define RETURN_IF(...) return_if(__VA_ARGS__)
 #endif
 
+```
+### Usage
+```C++
+
+void foo(int a, int b) {
+    return_if(a < b);
+    // 
+    // lot of code
+    //
+}
+
+std::string bar(bool cond) {
+  RETURN_IF(cond, "early return");
+  //
+  // lot of code
+  // 
+  return "regular return";
+}
+
+bool baz(int n) {
+  RETURN_FALSE_IF(n < 2 || n * n > 25);
+  
+  //lot of code
+  
+  return true;
+}
+
+int main() {
+  foo(10, 20);
+  std::string s = bar(0 == 0);
+  bool b = baz(1);
+  
+  return 0;
+}
 ```
