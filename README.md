@@ -1,4 +1,4 @@
-# return_if-macro
+# return_if macro
 ```C++
 #if !defined(return_if) || !defined(RETURN_IF)
 #define return_if1(expression) \
