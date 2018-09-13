@@ -9,7 +9,7 @@
 #define return_if2(expression, value) \
   do {                                \
     if ((expression)) {               \
-      return (value);                   \
+      return (value);                 \
     }                                 \
   } while (false)
 
