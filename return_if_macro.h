@@ -16,7 +16,7 @@
 #define _ARG2(_0, _1, _2, ...) _2
 #define NARG2(...) _ARG2(__VA_ARGS__, 2, 1, 0)
 
-#define _ONE_OR_TWO_ARGS_1(a) return_if1(a)
+#define _ONE_OR_TWO_ARGS_1(a) return_if1((a))
 #define _ONE_OR_TWO_ARGS_2(a, b) return_if2((a), (b))
 
 #define _ONE_OR_TWO_ARGS_HELP(N, ...) _ONE_OR_TWO_ARGS_##N(__VA_ARGS__)
