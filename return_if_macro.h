@@ -1,4 +1,4 @@
-#if !defined(return_if) || !defined(RETURN_IF)
+#if !defined(return_if)
 #define return_if1(expression) \
   do {                         \
     if ((expression)) {        \
@@ -19,14 +19,12 @@
 #define _ONE_OR_TWO_ARGS_1(a) return_if1(a)
 #define _ONE_OR_TWO_ARGS_2(a, b) return_if2((a), (b))
 
-#define __ONE_OR_TWO_ARGS(N, ...) _ONE_OR_TWO_ARGS_##N(__VA_ARGS__)
-#define _ONE_OR_TWO_ARGS(N, ...) __ONE_OR_TWO_ARGS(N, __VA_ARGS__)
+#define _ONE_OR_TWO_ARGS_HELP(N, ...) _ONE_OR_TWO_ARGS_##N(__VA_ARGS__)
+#define _ONE_OR_TWO_ARGS(N, ...) _ONE_OR_TWO_ARGS_HELP(N, __VA_ARGS__)
 
 #define return_if(...) _ONE_OR_TWO_ARGS(NARG2(__VA_ARGS__), __VA_ARGS__)
 
 #define return_false_if(expression) return_if((expression), false)
+#define return_true_if(expression) return_if((expression), true)
 
-#define RETURN_FALSE_IF(expression) return_false_if((expression))
-
-#define RETURN_IF(...) return_if(__VA_ARGS__)
 #endif
